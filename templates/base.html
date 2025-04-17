@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Confeitaria Bolos da Helen</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}"/>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+    <script src="{{ url_for('static', filename='/js/style.js')}}"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+<!-- cabeçalho início -->
+<header class="navbar navbar-expand-lg bg-light shadow p-3">
+    <div class="container-fluid">
+      <!-- Logo -->
+      <a class="navbar-brand d-flex align-items-center" href="/carrinho">
+        <img src="{{ url_for('static', filename='img/logo1.png') }}" alt="Logo1" alt="Confeitaria Bolos da Helen" title="Ir para a página inicial" width="100" height="100" class="d-inline-block align-text-top me-2">
+        <span class="fw-bold">Confeitaria Bolos da Helen</span>
+      </a>
+  
+      <!-- Botão de Menu (Hamburguer) -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <!-- Menu de Navegação -->
+      <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/carrinho">Produtos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contato">Contato</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin">Login</a>
+          </li>
+        </ul>
+    </div>
+  </div>
+</header>
+
+<main class="container flex-grow-1 my-5">
+    {% block content %}
+
+
+
+    {% endblock %}
+
+</main>
+
+<footer class="d-flex justify-content-between align-items-center p-3 mt-5">
+  <div class="d-flex align-items-center">
+      <img src="{{ url_for('static', filename='img/logo1.png') }}" alt="Logo Confeitaria" style="height: 60px;">
+      <span class="ms-2 fw-bold" style="color:#d2691e ; font-size: 1.1rem;">Confeitaria Bolos da Helen</span>
+  </div>
+
+  <p class="mb-0" style="font-size: 0.8rem; color: #d2691e;">
+    &copy; 2024 - by DRP01-PJI110 - Mauá e região | Desde 2010 
+  </p>
+
+  <div>
+      <a href="#" class="text-decoration-none mx-2" style="color: #d2691e;">
+          <i class="bx bxl-instagram"></i>
+      </a>
+      <a href="#" class="text-decoration-none mx-2" style="color: #d2691e;">
+          <i class="bx bxl-facebook"></i>
+      </a>
+      <a href="#" class="text-decoration-none mx-2" style="color: #d2691e;">
+          <i class="bx bxl-whatsapp"></i>
+      </a>
+  </div>
+</footer>
+
+
+
+    <script> //Falar produtos
+        document.getElementById("falarCarrinhoBtn").addEventListener("click", function () {
+            let produtos = document.querySelectorAll(".qtdProduto");
+            let mensagemTexto = "Você adicionou os seguintes produtos ao carrinho: ";
+    
+            let produtosAdicionados = [];
+    
+            produtos.forEach((quantidade, index) => {
+                let qtd = parseInt(quantidade.innerText);
+                if (qtd > 0) {
+                    let nomeProduto = quantidade.closest("tr").querySelector(".name").innerText;
+                    produtosAdicionados.push(`${qtd} ${nomeProduto}`);
+                }
+            });
+    
+            if (produtosAdicionados.length === 0) {
+                mensagemTexto = "Seu carrinho está vazio.";
+            } else {
+                mensagemTexto += produtosAdicionados.join(", ");
+            }
+    
+            let mensagem = new SpeechSynthesisUtterance(mensagemTexto);
+            mensagem.lang = "pt-BR";
+            mensagem.rate = 1; 
+    
+            window.speechSynthesis.speak(mensagem);
+        });
+    </script>
+    
+
+
+
+
+</body>
+</html>

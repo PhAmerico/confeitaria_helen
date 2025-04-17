@@ -1,0 +1,53 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+    <h1 style="color: #8b4513;">Produtos Mais Vendidos</h1>
+    <canvas id="produtosChart"></canvas>
+
+    <h1 style="color: #8b4513;">Vendas por Mês</h1>
+    <canvas id="vendasChart"></canvas>
+
+    <script>
+        // Produtos
+        const produtosLabels = {{ produtos|map(attribute=0)|list|tojson|safe }};
+        const produtosData = {{ produtos|map(attribute=1)|list|tojson|safe }};
+
+        new Chart(document.getElementById('produtosChart'), {
+            type: 'bar',
+            data: {
+                labels: produtosLabels,
+                datasets: [{
+                    label: 'Quantidade Vendida',
+                    data: produtosData,
+                    backgroundColor: 'orange'
+                }]
+            }
+        });
+
+
+
+        // Vendas por mês
+        const mesesLabels = {{ vendas|map(attribute=0)|list|tojson|safe }};
+        const vendasData = {{ vendas|map(attribute=1)|list|tojson|safe }};
+
+        new Chart(document.getElementById('vendasChart'), {
+            type: 'line',
+            data: {
+                labels: mesesLabels,
+                datasets: [{
+                    label: 'Pedidos',
+                    data: vendasData,
+                    backgroundColor: 'blue',
+                    borderColor: 'blue',
+                    fill: false
+                }]
+            }
+        });
+    </script>
+
+
+{% endblock %}
+

@@ -1,0 +1,460 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+
+body {
+  background: #f6f6f6;
+  font-family: "Lato", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+body > header {
+  color: white;
+  background-color: rgba(39, 43, 58, 0.5294117647);
+  font-size: 20px;
+  padding: 30px 0;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+}
+body > main {
+  background-color: rgb(255, 255, 255);
+  padding: 0 20px 20px;
+}
+body > main .page-title {
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 50px 0;
+  text-align: center;
+}
+body > main .content {
+  display: flex;
+}
+body > main .content section {
+  flex: 1;
+}
+body > main .content aside {
+  min-width: 250px;
+}
+
+button {
+  cursor: pointer;
+  font-family: "Lato", sans-serif;
+}
+
+/* Estilos para o cabeÃ§alho */
+.cabecalho {
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(39, 43, 58, 0.5294117647);
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0; /* Remover todo o preenchimento */
+  margin: 0; /* Remover toda a margem */
+  height: 100px; /* Definir a altura do cabeÃ§alho */
+  position: relative; /* Adiciona posiÃ§Ã£o relativa */
+}
+
+.cabecalho_logo {
+  height: 80px; /* Definir a altura da imagem como 80 pixels */
+  width: 100px; /* Definir a largura da imagem como 100 pixels */
+  margin-left: 15px; /* Manter a mesma margem Ã  esquerda */
+}
+
+.cabecalho_menu {
+  list-style-type: none;
+  margin-right: 40px;
+}
+
+.cabecalho_menu li {
+  display: inline-block;
+}
+
+.cabecalho_menu li a {
+  text-decoration: none; /* Remover a decoraÃ§Ã£o dos links */
+  color: white;
+  font-size: 15px;
+  margin-right: 40px; /* Adicionar espaÃ§amento entre os itens */
+  display: inline-block;
+}
+
+.cabecalho_menu li:last-child a {
+  margin-right: 0; /* Remover margem direita do Ãºltimo item */
+}
+
+.cabecalho_menu_button {
+  display: none; /* Ocultar o botÃ£o do menu */
+  margin-right: 20px;
+}
+
+.cabecalho_nome {
+  position: absolute; /* Torna o elemento absoluto */
+  left: 50%; /* Define a posiÃ§Ã£o esquerda como 50% */
+  transform: translateX(-50%); /* Move o elemento de volta metade de sua largura */
+  color: white; /* Cor do texto */
+}
+
+/* Media query para tela menor que 910px */
+@media screen and (max-width: 960px) {
+  .cabecalho_menu {
+    display: none;
+  }
+  .cabecalho_menu_button {
+    display: none; /* Ocultar o botÃ£o do menu */
+    margin-right: 20px;
+    background-color: #8d8d8d;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+    border: 2px rgb(139, 139, 139); /* Adiciona borda sÃ³lida preta */
+    border-radius: 10px; /* Arredonda os cantos com raio de 10px */
+    padding: 10px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-left: auto; /* Adiciona margem Ã  direita */
+  }
+  .cabecalho_menu.show-menu {
+    display: block;
+  }
+  .cabecalho_menu.show-menu li {
+    display: block;
+  }
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table thead tr {
+  border-bottom: 3px solid #eee;
+}
+table thead tr th {
+  text-align: left;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+  color: #8b4513;
+}
+table tbody tr {
+  border-bottom: 3px solid #eee;
+}
+table tbody tr:last-child {
+  border: 0;
+}
+table tbody tr td {
+  padding: 30px 0;
+}
+
+.product {
+  display: flex;
+  align-items: center;
+}
+.product img {
+  border-radius: 6px;
+}
+.product .info {
+  margin-left: 20px;
+}
+.product .info .name {
+  font-size: 15px;
+  text-transform: uppercase;
+  font-family: "Lato", sans-serif;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.product .info .category {
+  color: #666;
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: "Lato", Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+.qty {
+  background: #eee;
+  display: inline-flex;
+  padding: 0 0;
+  justify-content: space-around;
+  align-items: center;
+  min-width: 60px;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 30px;
+}
+.qty span {
+  margin: 0 10px;
+}
+.qty button {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: 0;
+  padding: 0 10px;
+  font-size: 20px;
+  height: 100%;
+}
+.qty button:hover {
+  background: #ddd;
+}
+
+.remove {
+  background: #eee;
+  border: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+.remove:hover {
+  background: #ddd;
+}
+
+aside {
+  max-width: 50%; /* Adjust the percentage as needed */
+  margin-left: 30px; /* Maintain desired margin */
+  text-transform: uppercase;
+  font-family: "Lato", Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+aside .box {
+  margin-bottom: 15px;
+  border: 1px transparent #ccc;
+  background: #eee;
+  color: #222;
+}
+aside .box header {
+  padding: 25px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+  background-color: #ee8f4b;
+  color: white;
+}
+aside .box .info {  
+  padding: 20px;
+  font-size: 12px;
+}
+aside .box .info > div {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #ee8f4b;
+}
+aside .box .info > div:last-child {
+  margin: 0;
+}
+aside .box .info button {
+  color: #8783ff;
+  background: transparent;
+  border: 0;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+}
+aside .box footer > div {
+  padding: 20px;
+  background: rgba(58, 51, 39, 0.529);
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
+aside > button {
+  margin-bottom: 8px;
+  border: 0;
+  padding: 15px 0;
+  color: white;
+  background: #716cff;
+  display: block;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: "Lato", Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+aside > button:hover {
+  background: rgba(39, 43, 58, 0.5294117647);
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.wrapper {
+  min-height: 100%;
+  position: relative;
+}
+
+.content {
+  padding-bottom: 100px; /* Altura do footer */
+}
+
+.footer-container {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #716cff;
+  color: white;
+  font-size: small;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000; /* Garante que o footer fique acima do conteÃºdo, se houver */
+}
+
+.footer-container p {
+  margin: 5px 0;
+}
+
+.footer-container .rodape__logo {
+  width: auto;
+  height: 50px;
+}
+
+@media (max-width: 949px) {
+  .wrapper {
+    min-width: 950px; /* Define a largura mÃ­nima para 900px */
+    width: 100%; /* Garante que a largura ocupe toda a largura disponÃ­vel */
+    margin: 0 auto; /* Centraliza o conteÃºdo horizontalmente */
+  }
+}/*# sourceMappingURL=style.css.map */
+
+
+
+aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza o aside */
+}
+
+.box {
+  width: 100%; /* Garante que a box ocupa toda a largura do aside */
+  max-width: 400px;
+  margin: auto; /* Centraliza a box */
+}
+
+/* Agora o container dos botões é flex */
+.botoes-container {
+  display: flex;
+  flex-direction: column; /* Empilha os botões verticalmente */
+  align-items: center; /* Centraliza os botões */
+  gap: 10px; /* Espaço entre os botões */
+  width: 100%;
+}
+
+/* Botões também flexíveis */
+.botoes-container button {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex: 1; /* Ocupa todo o espaço disponível */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
+}
+
+  
+
+.product img { 
+  width: 120px;  /* Defina um tamanho fixo para manter a uniformidade */
+  height: 120px;
+  object-fit: cover; /* MantÃ©m o aspecto da imagem sem distorcer */
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.product img:hover {
+  transform: scale(1.4); /* Efeito de zoom suave */
+}
+
+
+header {
+  background-color: #fff8f0; /*#fff8f0 cor clarinha de confeitaria */
+}
+
+.navbar-brand span {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.8rem;
+  color: #d2691e; /* cor de bolo/caramelo */
+}
+
+.nav-link {
+  font-family: 'Pacifico', cursive;
+  font-weight: 500;
+  color: #8b4513;
+  margin-right: 1rem;
+}
+
+.nav-link:hover {
+  color: #d2691e;
+}
+
+
+.page-title{
+  font-family: 'pacifico', cursive;
+  color: #d2691e;
+}
+
+
+
+#descricao p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+#descricao h3 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.btn-primary {
+  background-color: #d16a7a;
+  border-color: #d16a7a;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 30px;
+}
+
+.btn-primary:hover {
+  background-color: #b14f61;
+  border-color: #b14f61;
+}
+
+
+.carrossel-img {
+  max-height: 300px; /* ou 300px, depende do visual que quiser */
+  object-fit: cover; /* corta a imagem suavemente para preencher o espaço */
+}
+
+
+footer {
+  background-color: #e7e7e7 ; /*#fff8f0 cor clarinha de confeitaria */
+} 
+
+body {
+  font-size: 1rem; /* ou 16px */
+}
+
+
+
+a:hover i.bi {
+  color: #d2691e;
+}
+

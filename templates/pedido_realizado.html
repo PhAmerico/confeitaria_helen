@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<!-- Modal de confirmação -->
+<div class="modal fade" id="pedidoModal" tabindex="-1" aria-labelledby="pedidoModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-success text-white">
+        <h5 class="modal-title" id="pedidoModalLabel">Pedido Confirmado!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        Seu pedido foi realizado com sucesso! Em Breve entraremos em contato com mais detalhes.
+      </div>
+      <div class="modal-footer">
+        <a href="{{ url_for('home') }}" class="btn btn-success">Ok</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Script para abrir o modal automaticamente -->
+<script>
+    window.addEventListener('load', function () {
+        const modal = new bootstrap.Modal(document.getElementById('pedidoModal'));
+        modal.show();
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,142 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+
+body {
+  background: #f6f6f6;
+  font-family: "Lato", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.logo-container {
+  width: 100%;
+  background-color: #fff; /* Fundo branco */
+  display: flex;
+  justify-content: center;
+  padding: 10px 0px; /* Adicionado espaÃ§amento nas bordas superior e inferior */
+}
+
+.cabecalho_logo {
+  height: 100px; /* Aumentar a altura do logo */
+  width: auto;
+}
+
+.cabecalho {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centralizar horizontalmente os itens */
+  background-color: rgba(39, 43, 58, 0.5294117647);
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 10px; /* Reduzido o padding */
+  margin: 0; /* Removido o margin */
+  height: 100px; /* Reduzida a altura do cabeÃ§alho */
+}
+
+.cabecalho_menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.cabecalho_menu li {
+  display: inline-block;
+  margin-right: 80px; /* Aumenta o espaÃ§o entre os itens do menu */
+}
+
+.cabecalho_menu li:last-child {
+  margin-right: 0;
+}
+
+.cabecalho_menu li a {
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+  padding: 20px 20px; /* Ajusta o padding dos itens do menu */
+}
+
+/* Media query para ajustar o layout em telas menores */
+@media (max-width: 650px) {
+  .cabecalho_menu {
+    flex-wrap: wrap; /* Permite que os itens do menu passem para a prÃ³xima linha */
+  }
+
+  .cabecalho_menu li {
+    width: 100%; /* Define a largura dos itens do menu para ocupar toda a largura da tela */
+    margin-right: 0;
+    margin-bottom: 10px; /* Adiciona espaÃ§amento entre os itens do menu */
+  }
+
+  .cabecalho_menu li:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.cabecalho_menu li a:hover {
+  color: #ccc; /* Altera a cor do texto ao passar o mouse sobre os itens do menu */
+}
+
+.page-title {
+  font-size: 28px; /* Ajusta o tamanho da fonte conforme necessÃ¡rio */
+  font-weight: bold; /* Torna o texto em negrito */
+  text-align: center; /* Centraliza o texto */
+  margin-top: 30px; /* Adiciona espaÃ§o superior para centralizar verticalmente */
+  text-transform: uppercase;
+}
+
+.content p {
+  margin-bottom: 20px; /* Ajusta o espaÃ§amento entre o parÃ¡grafo e o prÃ³ximo item */
+  text-align: justify; /* Justifica o texto */
+  line-height: 2; /* Ajusta o espaÃ§amento entre as linhas do texto */
+  padding: 20px;
+}
+
+h3 {
+  margin-bottom: 20px; /* Ajusta o espaÃ§amento entre o h3 e o prÃ³ximo item */
+  text-align: justify; /* Justifica o texto */
+  line-height: 2; /* Ajusta o espaÃ§amento entre as linhas do texto */
+  padding: 20px; /* Adiciona um espaÃ§amento interno ao redor do h3 */
+}
+
+.footer-container {
+  position: relative; /* Fixar o footer na parte inferior da janela de visualizaÃ§Ã£o */
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #716cff;
+  color: white;
+  font-size: small;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+}
+
+.footer-container p {
+  margin: 5px 0;
+}
+
+.footer-container .rodape__logo {
+  width: auto;
+  height: 50px;
+}
+
+@media (max-width: 949px) {
+  .wrapper {
+    min-width: 950px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
