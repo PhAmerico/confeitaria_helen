@@ -257,34 +257,43 @@
     </div> <!-- FIM DA ROW -->
 </div>
 
-    <script> //Falar produtos
-            document.getElementById("falarCarrinhoBtn").addEventListener("click", function () {
-                let produtos = document.querySelectorAll(".qtdProduto");
-                let mensagemTexto = "Você adicionou os seguintes produtos ao carrinho: ";
-        
-                let produtosAdicionados = [];
-        
-                produtos.forEach((quantidade, index) => {
-                    let qtd = parseInt(quantidade.innerText);
-                    if (qtd > 0) {
-                        let nomeProduto = quantidade.closest("tr").querySelector(".name").innerText;
-                        produtosAdicionados.push(`${qtd} ${nomeProduto}`);
-                    }
-                });
-        
-                if (produtosAdicionados.length === 0) {
-                    mensagemTexto = "Seu carrinho está vazio.";
-                } else {
-                    mensagemTexto += produtosAdicionados.join(", ");
-                }
-        
-                let mensagem = new SpeechSynthesisUtterance(mensagemTexto);
-                mensagem.lang = "pt-BR";
-                mensagem.rate = 1; 
-        
-                window.speechSynthesis.speak(mensagem);
-            });
-        </script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const falarBtn = document.getElementById("falarCarrinhoBtn");
+  
+      if (falarBtn) {
+        falarBtn.addEventListener("click", function () {
+          let produtos = document.querySelectorAll(".qtdProduto");
+          let mensagemTexto = "Você adicionou os seguintes produtos ao carrinho: ";
+  
+          let produtosAdicionados = [];
+  
+          produtos.forEach((quantidade) => {
+            let qtd = parseInt(quantidade.innerText);
+            if (qtd > 0) {
+              let nomeProduto = quantidade.closest("tr").querySelector(".name").innerText;
+              produtosAdicionados.push(`${qtd} ${nomeProduto}`);
+            }
+          });
+  
+          if (produtosAdicionados.length === 0) {
+            mensagemTexto = "Seu carrinho está vazio.";
+          } else {
+            mensagemTexto += produtosAdicionados.join(", ");
+          }
+  
+          let mensagem = new SpeechSynthesisUtterance(mensagemTexto);
+          mensagem.lang = "pt-BR";
+          mensagem.rate = 1;
+  
+          // Impede falas duplicadas
+          window.speechSynthesis.cancel();
+          window.speechSynthesis.speak(mensagem);
+        });
+      }
+    });
+  </script>
+  
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
