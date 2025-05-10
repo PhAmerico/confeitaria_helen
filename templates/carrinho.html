@@ -4,12 +4,14 @@
 
 {% block content %}
 
-<main> 
-<div class="page-title">FAÇA SEU PEDIDO</div>
-        <div class="content">
-            <section>
-                <table>
-                    <thead>
+<div class="container mt-4">
+    <div class="page-title">FAÇA SEU PEDIDO</div>
+    <div class="row">
+    <!-- TABELA DE PRODUTOS -->
+     <div class="col-lg-8 col-md-12 mb-4">
+            <div class="table-responsive">
+                <table class="table align-middle">
+                    <thead class="thead-light">
                         <tr>
                             <th>Produto</th>
                             <th>Preço</th>
@@ -18,257 +20,244 @@
                             <th></th>
                         </tr>
                     </thead>
-
-                    <tbody>
+            <tbody>
+                <tr>
+                    <td>
+                      <div class="d-flex align-items-center flex-wrap">
+                        <img src="{{ url_for('static', filename='img/banoffe.png') }}" class="img-thumbnail me-2 produto-img" alt="Banoffe" style="width: 90px; height: 90px;">
+                        <div>
+                          <div class="name">Banoffe</div>
+                          <div class="categoria">Tortas</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td data-preco="120.00">R$120,00</td>
+                    <td>
+                      <div class="qtde d-flex align-items-center">
+                        <button data-action="diminuir" class="btn btn-outline-secondary btn-sm"><i class="bx bx-minus"></i></button>
+                        <span class="qtdProduto mx-2">0</span>
+                        <button data-action="aumentar" class="btn btn-outline-secondary btn-sm"><i class="bx bx-plus"></i></button>
+                      </div>
+                    </td>
+                    <td class="valor-Total" id="valorTotalp1"></td>
+                    <td><button class="remove btn btn-danger btn-sm"><i class="bx bx-x"></i></button></td>
+                  </tr>
                         <tr>
                             <td>
-                                <div class="product">
-                                    <img src="{{ url_for('static', filename='img/banoffe.png') }}" class="img-thumbnail" alt="Imagem de uma torta banoffe" width="100" height="130">
-                                    <div class="info">
-                                        <div class="name">Banoffe</div>
-                                        <div class="categoria">Tortas</div>
-                                    </div>
-                                </div>
-                                
-                                
-                            </td>
-                            <td data-preco="120.00">R$ 120,00</td>
-                            <td>
-                                <div class="qtde">
-                                    <button data-action="diminuir"><i class="bx bx-minus"></i></button>
-                                    <span class="qtdProduto">0</span>
-                                    <button data-action="aumentar"><i class="bx bx-plus"></i></button>
-                                </div>
-                            </td>
-                            <td class="valor-Total" id="valorTotalp1"></td>
-                            <td>
-                                <button class="remove"><i class="bx bx-x"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="product">
-                                    <img src="{{ url_for('static', filename='img/Bolo_de_Cenoura.jpeg') }}" class="img-thumbnail" alt="Imagem de um bolo de cenoura" width="100" height="130">
+                                <div class="d-flex align-items-center flex-wrap">
+                                    <img src="{{ url_for('static', filename='img/Bolo_de_Cenoura.jpeg') }}" class="img-thumbnail me-2 produto-img" alt="Bolo de cenoura" style="max-width: 90px; height: auto;">
                                     <div class="info">
                                         <div class="name">Bolo de Cenoura</div>
                                         <div class="categoria">Bolos</div>
                                     </div>
                                 </div>
                             </td>
-                            <td data-preco="50.00">R$ 50,00</td>
+                            <td data-preco="50.00">R$50,00</td>
                             <td>
-                                <div class="qtde">
-                                    <button data-action="diminuir"><i class="bx bx-minus"></i></button>
-                                    <span class="qtdProduto">0</span>
-                                    <button data-action="aumentar"><i class="bx bx-plus"></i></button>
+                                <div class="qtde d-flex align-items-center">
+                                    <button data-action="diminuir" class="btn btn-outline-secondary btn-sm"><i class="bx bx-minus"></i></button>
+                                    <span class="qtdProduto mx-2">0</span>
+                                    <button data-action="aumentar" class="btn btn-outline-secondary btn-sm"><i class="bx bx-plus"></i></button>
                                 </div>
                             </td>
                             <td class="valor-Total" id="valorTotalp2"></td>
                             <td>
-                                <button class="remove"><i class="bx bx-x"></i></button>
+                                <button class="remove btn btn-danger btn-sm"><i class="bx bx-x"></i></button>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <div class="product">
-                                    <img src="{{ url_for('static', filename='img/Bolo de maçã.jpeg') }}" class="img-thumbnail" alt="Imagem de umbolo de maça" width="100" height="130">
+                                <div class="d-flex align-items-center flex-wrap">
+                                    <img src="{{ url_for('static', filename='img/Bolo de maçã.jpeg') }}" class="img-thumbnail me-2 produto-img" alt="Bolo de Maçã" style="width: 90px; height: 90px;">
                                     <div class="info">
                                         <div class="name">Bolo de Maçã</div>
                                         <div class="categoria">Bolos</div>
                                     </div>
                                 </div>
                             </td>
-                            <td data-preco="80.00">R$ 80,00</td>
+                            <td data-preco="80.00">R$80,00</td>
                             <td>
-                                <div class="qtde">
-                                    <button data-action="diminuir"><i class="bx bx-minus"></i></button>
-                                    <span class="qtdProduto">0</span>
-                                    <button data-action="aumentar"><i class="bx bx-plus"></i></button>
+                                <div class="qtde d-flex align-items-center">
+                                    <button data-action="diminuir" class="btn btn-outline-secondary btn-sm"><i class="bx bx-minus"></i></button>
+                                    <span class="qtdProduto mx-2">0</span>
+                                    <button data-action="aumentar" class="btn btn-outline-secondary btn-sm"><i class="bx bx-plus"></i></button>
                                 </div>
                             </td>
                             <td class="valor-Total" id="valorTotalp3"></td>
                             <td>
-                                <button class="remove"><i class="bx bx-x"></i></button>
+                                <button class="remove btn btn-danger btn-sm"><i class="bx bx-x"></i></button>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <div class="product">
-                                    <img src="{{ url_for('static', filename='img/bolofubagoiabada.jpg') }}" class="img-thumbnail" alt="Imagem de um bolo de Fuba com Goiabada " width="100" height="130">
+                                <div class="d-flex align-items-center flex-wrap">
+                                    <img src="{{ url_for('static', filename='img/bolofubagoiabada.jpg') }}" class="img-thumbnail me-2 produto-img" alt="Bolo de Fubá com Goiabada" style="max-width: 90px; height: auto;">
                                     <div class="info">
                                         <div class="name">Bolo de Fuba com Goiabada</div>
                                         <div class="categoria">Bolos</div>
                                     </div>
                                 </div>
                             </td>
-                            <td data-preco="80.00">R$ 80,00</td>
+                            <td data-preco="80.00">R$80,00</td>
                             <td>
-                                <div class="qtde">
-                                    <button data-action="diminuir"><i class="bx bx-minus"></i></button>
-                                    <span class="qtdProduto">0</span>
-                                    <button data-action="aumentar"><i class="bx bx-plus"></i></button>
+                                <div class="qtde d-flex align-items-center">
+                                    <button data-action="diminuir" class="btn btn-outline-secondary btn-sm"><i class="bx bx-minus"></i></button>
+                                    <span class="qtdProduto mx-2">0</span>
+                                    <button data-action="aumentar" class="btn btn-outline-secondary btn-sm"><i class="bx bx-plus"></i></button>
                                 </div>
                             </td>
                             <td class="valor-Total" id="valorTotalp4"></td>
                             <td>
-                                <button class="remove"><i class="bx bx-x"></i></button>
+                                <button class="remove btn btn-danger btn-sm"><i class="bx bx-x"></i></button>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <div class="product">
-                                    <img src="{{ url_for('static', filename='img/coxinha.jpg') }}" class="img-thumbnail" alt="Imagem de uma torta banoffe" width="100" height="130">
+                                <div class="d-flex align-items-center flex-wrap">
+                                    <img src="{{ url_for('static', filename='img/coxinha.jpg') }}" class="img-thumbnail me-2 produto-img" alt="Coxinha" style="width: 90px; height: 90px;">
                                     <div class="info">
                                         <div class="name">Coxinha</div>
                                         <div class="categoria">Doces</div>
                                     </div>
                                 </div>
                             </td>
-                            <td data-preco="80.00">R$ 80,00</td>
+                            <td data-preco="80.00">R$80,00</td>
                             <td>
-                                <div class="qtde">
-                                    <button data-action="diminuir"><i class="bx bx-minus"></i></button>
-                                    <span class="qtdProduto">0</span>
-                                    <button data-action="aumentar"><i class="bx bx-plus"></i></button>
+                                <div class="qtde d-flex align-items-center">
+                                    <button data-action="diminuir" class="btn btn-outline-secondary btn-sm"><i class="bx bx-minus"></i></button>
+                                    <span class="qtdProduto mx-2">0</span>
+                                    <button data-action="aumentar" class="btn btn-outline-secondary btn-sm"><i class="bx bx-plus"></i></button>
                                 </div>
                             </td>
                             <td class="valor-Total" id="valorTotalp5"></td>
                             <td>
-                                <button class="remove"><i class="bx bx-x"></i></button>
+                                <button class="remove btn btn-danger btn-sm"><i class="bx bx-x"></i></button>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <div class="product">
-                                    <img src="{{ url_for('static', filename='img/pudim.jpg') }}" class="img-thumbnail" alt="Imagem de uma torta banoffe" width="100" height="130">
+                                <div class="d-flex align-items-center flex-wrap">
+                                    <img src="{{ url_for('static', filename='img/pudim.jpg') }}" class="img-thumbnail me-2 produto-img" alt="Pudim" style="width: 90px; height: 90px;">
                                     <div class="info">
                                         <div class="name">Pudim</div>
                                         <div class="categoria">Pudim</div>
                                     </div>
                                 </div>
                             </td>
-                            <td data-preco="80.00">R$ 80,00</td>
+                            <td data-preco="80.00">R$80,00</td>
                             <td>
-                                <div class="qtde">
-                                    <button data-action="diminuir"><i class="bx bx-minus"></i></button>
-                                    <span class="qtdProduto">0</span>
-                                    <button data-action="aumentar"><i class="bx bx-plus"></i></button>
+                                <div class="qtde d-flex align-items-center">
+                                    <button data-action="diminuir" class="btn btn-outline-secondary btn-sm"><i class="bx bx-minus"></i></button>
+                                    <span class="qtdProduto mx-2">0</span>
+                                    <button data-action="aumentar" class="btn btn-outline-secondary btn-sm"><i class="bx bx-plus"></i></button>
                                 </div>
                             </td>
                             <td class="valor-Total" id="valorTotalp6"></td>
                             <td>
-                                <button class="remove"><i class="bx bx-x"></i></button>
+                                <button class="remove btn btn-danger btn-sm"><i class="bx bx-x"></i></button>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <div class="product">
-                                    <img src="{{ url_for('static', filename='img/redvelvet.jpg') }}" class="img-thumbnail" alt="Imagem de uma torta banoffe" width="100" height="130">
+                                <div class="d-flex align-items-center flex-wrap">
+                                    <img src="{{ url_for('static', filename='img/redvelvet.jpg') }}" class="img-thumbnail me-2 produto-img" alt="Torta RedVelvet" style="width: 90px; height: 90px;">
                                     <div class="info">
                                         <div class="name">Bolo RedVelvet</div>
                                         <div class="categoria">Bolos</div>
                                     </div>
                                 </div>
                             </td>
-                            <td data-preco="80.00">R$ 80,00</td>
+                            <td data-preco="80.00">R$80,00</td>
                             <td>
-                                <div class="qtde">
-                                    <button data-action="diminuir"><i class="bx bx-minus"></i></button>
-                                    <span class="qtdProduto">0</span>
-                                    <button data-action="aumentar"><i class="bx bx-plus"></i></button>
+                                <div class="qtde d-flex align-items-center">
+                                    <button data-action="diminuir" class="btn btn-outline-secondary btn-sm"><i class="bx bx-minus"></i></button>
+                                    <span class="qtdProduto mx-2">0</span>
+                                    <button data-action="aumentar" class="btn btn-outline-secondary btn-sm"><i class="bx bx-plus"></i></button>
                                 </div>
                             </td>
                             <td class="valor-Total" id="valorTotalp7"></td>
                             <td>
-                                <button class="remove"><i class="bx bx-x"></i></button>
+                                <button class="remove btn btn-danger btn-sm"><i class="bx bx-x"></i></button>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <div class="product">
-                                    <img src="{{ url_for('static', filename='img/tortadelimao.png') }}" class="img-thumbnail" alt="Imagem de uma torta banoffe" width="100" height="130">
+                                <div class="d-flex align-items-center flex-wrap">
+                                    <img src="{{ url_for('static', filename='img/tortadelimao.png') }}" class="img-thumbnail me-2 produto-img" alt="Torta de limão" style="width: 90px; height: 90px;">
                                     <div class="info">
                                         <div class="name">Torta de Limão</div>
                                         <div class="categoria">Tortas</div>
                                     </div>
                                 </div>
                             </td>
-                            <td data-preco="80.00">R$ 80,00</td>
+                            <td data-preco="80.00">R$80,00</td>
                             <td>
-                                <div class="qtde">
-                                    <button data-action="diminuir"><i class="bx bx-minus"></i></button>
-                                    <span class="qtdProduto">0</span>
-                                    <button data-action="aumentar"><i class="bx bx-plus"></i></button>
+                                <div class="qtde d-flex align-items-center">
+                                    <button data-action="diminuir" class="btn btn-outline-secondary btn-sm"><i class="bx bx-minus"></i></button>
+                                    <span class="qtdProduto mx-2">0</span>
+                                    <button data-action="aumentar" class="btn btn-outline-secondary btn-sm"><i class="bx bx-plus"></i></button>
                                 </div>
                             </td>
                             <td class="valor-Total" id="valorTotalp8"></td>
                             <td>
-                                <button class="remove"><i class="bx bx-x"></i></button>
+                                <button class="remove btn btn-danger btn-sm"><i class="bx bx-x"></i></button>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <div class="product">
-                                    <img src="{{ url_for('static', filename='img/tortamaracujachoco.jpg') }}" class="img-thumbnail" alt="Imagem de uma torta banoffe" width="100" height="130">
+                                <div class="d-flex align-items-center flex-wrap">
+                                    <img src="{{ url_for('static', filename='img/tortamaracujachoco.jpg') }}" class="img-thumbnail me-2 produto-img" alt="Torta de Maracujá" style="width: 90px; height: 90px;">
                                     <div class="info">
                                         <div class="name">Torta de Maracujá com Chocolate</div>
                                         <div class="categoria">Tortas</div>
                                     </div>
                                 </div>
                             </td>
-                            <td data-preco="80.00">R$ 80,00</td>
+                            <td data-preco="80.00">R$80,00</td>
                             <td>
-                                <div class="qtde">
-                                    <button data-action="diminuir"><i class="bx bx-minus"></i></button>
-                                    <span class="qtdProduto">0</span>
-                                    <button data-action="aumentar"><i class="bx bx-plus"></i></button>
+                                <div class="qtde d-flex align-items-center">
+                                    <button data-action="diminuir" class="btn btn-outline-secondary btn-sm"><i class="bx bx-minus"></i></button>
+                                    <span class="qtdProduto mx-2">0</span>
+                                    <button data-action="aumentar" class="btn btn-outline-secondary btn-sm"><i class="bx bx-plus"></i></button>
                                 </div>
                             </td>
                             <td class="valor-Total" id="valorTotalp9"></td>
                             <td>
-                                <button class="remove"><i class="bx bx-x"></i></button>
+                                <button class="remove btn btn-danger btn-sm"><i class="bx bx-x"></i></button>
                             </td>
                         </tr>                                                                   
                     </tbody>
                 </table>
-            </section>
-            <aside> 
-                <div class="box">
-                    <header>Resumo do Pedido</header>
-                    <div class="info">
-                        <div><span>Sub-Total</span><span id="subtotal"></span></div>
-                        <div><span>Frete</span><span id="frete">Free</span></div>
-                        <div><span>Desconto</span><span id="desconto"></span></div>
-                    </div>
-                    <footer>    
-                        <div><span>Total</span><span id="total"></span></div>
-                    </footer>
-                </div> 
-
-                
-                <div class="botoes-conteiner">
-                    <div class="col" style="width: 100%;">
-                      <div class="row mb-2">
-                        <button id="falarCarrinhoBtn" type="button" class="btn btn-primary btn-block">Falar Produtos</button>  
-                      </div>
-                      <div class="row mb-2">
-                        <button id="limparCarrinhoBtn" type="button" class="btn btn-primary btn-block">Limpar Carrinho</button>
-                      </div>
-                      <div class="row mb-2">
-                       
-                        <form id="formFinalizar" action="{{ url_for('finalizar') }}" method="POST" class="d-block w-100">
-                            <!-- Os inputs escondidos vão ser criados com JavaScript aqui -->
-                            <button id="finalizarPedidoBtn" type="submit" class="btn btn-success btn-block w-100">Finalizar Pedido</button>
-                        </form>
-                        
-                    </div>
-                    </div>
+            </div>
+    </div>
+             <!-- RESUMO E BOTÕES -->
+        <div class="col-lg-4 col-md-12 secao-resumo">
+            <div class="box">
+                <header>Resumo do Pedido</header>
+                <div class="info">
+                    <div><span>Sub-Total</span><span id="subtotal"></span></div>
+                    <div><span>Frete</span><span id="frete">Free</span></div>
+                    <div><span>Desconto</span><span id="desconto"></span></div>
                 </div>
-                
-            </aside>
-        </div>
-</main>
-        <script> //Falar produtos
+                <footer>
+                    <div><span>Total</span><span id="total"></span></div>
+                </footer>
+            </div>
+
+            <!-- BOTÕES -->
+            <div class="botoes-container mt-3">
+                <button id="falarCarrinhoBtn" type="button" class="btn btn-primary w-100 mb-2">Falar Produtos</button>
+                <button id="limparCarrinhoBtn" type="button" class="btn btn-primary w-100 mb-2">Limpar Carrinho</button>
+                <form id="formFinalizar" action="{{ url_for('finalizar') }}" method="POST" class="w-100">
+                    <button id="finalizarPedidoBtn" type="submit" class="btn btn-success w-100">Finalizar Pedido</button>
+                </form>
+            </div>
+        </div> <!-- FIM DA COLUNA DO RESUMO -->
+
+    </div> <!-- FIM DA ROW -->
+</div>
+
+    <script> //Falar produtos
             document.getElementById("falarCarrinhoBtn").addEventListener("click", function () {
                 let produtos = document.querySelectorAll(".qtdProduto");
                 let mensagemTexto = "Você adicionou os seguintes produtos ao carrinho: ";

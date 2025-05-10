@@ -56,16 +56,16 @@ button {
   font-size: 1.2rem;
   font-weight: bold;
   text-transform: uppercase;
-  padding: 0; /* Remover todo o preenchimento */
-  margin: 0; /* Remover toda a margem */
-  height: 100px; /* Definir a altura do cabeÃ§alho */
-  position: relative; /* Adiciona posiÃ§Ã£o relativa */
+  padding: 0; 
+  margin: 0; 
+  height: 100px; 
+  position: relative; 
 }
 
 .cabecalho_logo {
-  height: 80px; /* Definir a altura da imagem como 80 pixels */
-  width: 100px; /* Definir a largura da imagem como 100 pixels */
-  margin-left: 15px; /* Manter a mesma margem Ã  esquerda */
+  height: 80px; 
+  width: 100px; 
+  margin-left: 15px; 
 }
 
 .cabecalho_menu {
@@ -78,27 +78,27 @@ button {
 }
 
 .cabecalho_menu li a {
-  text-decoration: none; /* Remover a decoraÃ§Ã£o dos links */
+  text-decoration: none; 
   color: white;
   font-size: 15px;
-  margin-right: 40px; /* Adicionar espaÃ§amento entre os itens */
+  margin-right: 40px; 
   display: inline-block;
 }
 
 .cabecalho_menu li:last-child a {
-  margin-right: 0; /* Remover margem direita do Ãºltimo item */
+  margin-right: 0; 
 }
 
 .cabecalho_menu_button {
-  display: none; /* Ocultar o botÃ£o do menu */
+  display: none; 
   margin-right: 20px;
 }
 
 .cabecalho_nome {
-  position: absolute; /* Torna o elemento absoluto */
-  left: 50%; /* Define a posiÃ§Ã£o esquerda como 50% */
-  transform: translateX(-50%); /* Move o elemento de volta metade de sua largura */
-  color: white; /* Cor do texto */
+  position: absolute; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  color: white; 
 }
 
 /* Media query para tela menor que 910px */
@@ -218,41 +218,49 @@ table tbody tr td {
   background: #ddd;
 }
 
-aside {
-  max-width: 50%; /* Adjust the percentage as needed */
-  margin-left: 30px; /* Maintain desired margin */
+
+.secao-resumo {
+  max-width: 50%;
+  margin-left: 0px;
   text-transform: uppercase;
   font-family: "Lato", Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
-aside .box {
+
+.secao-resumo .box {
   margin-bottom: 15px;
   border: 1px transparent #ccc;
   background: #eee;
   color: #222;
 }
-aside .box header {
-  padding: 25px 20px;
+
+.secao-resumo .box header {
+  padding: 20px 15px;
   font-size: 14px;
   font-weight: bold;
   border-bottom: 1px solid #ccc;
-  background-color: #ee8f4b;
+  color: #d2691e; /* cor de bolo/caramelo */
+  background-color: #d2691e;
   color: white;
 }
-aside .box .info {  
+
+.secao-resumo .box .info {  
   padding: 20px;
   font-size: 12px;
 }
-aside .box .info > div {
+
+.secao-resumo .box .info > div {
   display: flex;
   justify-content: space-between;
   font-weight: bold;
   margin-bottom: 10px;
-  color: #ee8f4b;
+  color: #d2691e;
 }
-aside .box .info > div:last-child {
+
+.secao-resumo .box .info > div:last-child {
   margin: 0;
 }
-aside .box .info button {
+
+.secao-resumo .box .info button {
   color: #8783ff;
   background: transparent;
   border: 0;
@@ -260,7 +268,8 @@ aside .box .info button {
   align-items: center;
   font-size: 12px;
 }
-aside .box footer > div {
+
+.secao-resumo .box footer > div {
   padding: 20px;
   background: rgba(58, 51, 39, 0.529);
   color: white;
@@ -269,7 +278,8 @@ aside .box footer > div {
   display: flex;
   justify-content: space-between;
 }
-aside > button {
+
+.secao-resumo > button {
   margin-bottom: 8px;
   border: 0;
   padding: 15px 0;
@@ -280,13 +290,14 @@ aside > button {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 15px;
-  text-transform: uppercase;
   font-weight: bold;
   font-family: "Lato", Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
-aside > button:hover {
-  background: rgba(39, 43, 58, 0.5294117647);
+
+.secao-resumo > button:hover {
+  background: rgba(39, 43, 58, 0.53);
 }
+
 
 html, body {
   height: 100%;
@@ -329,41 +340,34 @@ html, body {
 
 @media (max-width: 949px) {
   .wrapper {
-    min-width: 950px; /* Define a largura mÃ­nima para 900px */
-    width: 100%; /* Garante que a largura ocupe toda a largura disponÃ­vel */
-    margin: 0 auto; /* Centraliza o conteÃºdo horizontalmente */
+    min-width: 950px; /* Define a largura para 900px */
+    width: 100%; 
+    margin: 0 auto; 
   }
 }/*# sourceMappingURL=style.css.map */
 
 
 
-aside {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centraliza o aside */
-}
-
 .box {
-  width: 100%; /* Garante que a box ocupa toda a largura do aside */
+  width: 100%; 
   max-width: 400px;
-  margin: auto; /* Centraliza a box */
+  margin: auto; 
 }
 
-/* Agora o container dos botões é flex */
 .botoes-container {
   display: flex;
-  flex-direction: column; /* Empilha os botões verticalmente */
+  flex-direction: column; 
   align-items: center; /* Centraliza os botões */
   gap: 10px; /* Espaço entre os botões */
   width: 100%;
 }
 
-/* Botões também flexíveis */
+
 .botoes-container button {
   width: 100%;
   height: 50px;
   display: flex;
-  flex: 1; /* Ocupa todo o espaço disponível */
+  flex: 1; 
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -373,20 +377,57 @@ aside {
   
 
 .product img { 
-  width: 120px;  /* Defina um tamanho fixo para manter a uniformidade */
+  width: 120px;  /*tamanho fixo*/
   height: 120px;
-  object-fit: cover; /* MantÃ©m o aspecto da imagem sem distorcer */
+  object-fit: cover; 
   border-radius: 10px;
   transition: transform 0.3s ease-in-out;
 }
 
-.product img:hover {
-  transform: scale(1.4); /* Efeito de zoom suave */
+.produto-img:hover {
+  transform: scale(1.2); /* Efeito de zoom */
 }
 
 
+/* Ajustes para imagens de produtos */
+.produto-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+  
+}
+
+/* Ajustes para aside */
+aside .box {
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+}
+
+.botoes-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Responsividade: botão e resumo se ajustam */
+@media (max-width: 768px) {
+  .box, .botoes-container button {
+    max-width: 100%;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+  }
+}
+
+
+
 header {
-  background-color: #fff8f0; /*#fff8f0 cor clarinha de confeitaria */
+  background-color: #fff8f0; 
 }
 
 .navbar-brand span {
@@ -408,10 +449,9 @@ header {
 
 
 .page-title{
-  font-family: 'pacifico', cursive;
-  color: #d2691e;
+  font-family: 'pacifico';
+  color: #222;
 }
-
 
 
 #descricao p {
@@ -440,7 +480,7 @@ header {
 
 .carrossel-img {
   max-height: 300px; /* ou 300px, depende do visual que quiser */
-  object-fit: cover; /* corta a imagem suavemente para preencher o espaço */
+  object-fit: cover; 
 }
 
 
@@ -458,3 +498,19 @@ a:hover i.bi {
   color: #d2691e;
 }
 
+
+@media (max-width: 576px) {
+  footer img {
+    height: 40px; /* Menor imagem no celular */
+  }
+
+  .navbar-brand span {
+    font-size: 1rem; /* Texto menor no logo */
+  }
+}
+
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
