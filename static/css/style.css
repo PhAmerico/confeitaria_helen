@@ -326,7 +326,7 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 1000; /* Garante que o footer fique acima do conteÃºdo, se houver */
+  z-index: 1000; 
 }
 
 .footer-container p {
@@ -344,7 +344,7 @@ html, body {
     width: 100%; 
     margin: 0 auto; 
   }
-}/*# sourceMappingURL=style.css.map */
+}
 
 
 
@@ -449,8 +449,8 @@ header {
 
 
 .page-title{
-  font-family: 'pacifico';
-  color: #222;
+  font-family: 'Pacifico';
+  color: #d2691e;
 }
 
 
