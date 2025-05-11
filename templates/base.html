@@ -14,7 +14,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-
+    <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
+    <meta name="theme-color" content="#d2691e">
+    
 
 </head>
 
@@ -86,8 +88,6 @@
 </footer>
 
 
-
-
     <script> //Falar produtos
         document.getElementById("falarCarrinhoBtn").addEventListener("click", function () {
             let produtos = document.querySelectorAll(".qtdProduto");
@@ -118,7 +118,14 @@
     </script>
     
 
-
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register("/service-worker.js")
+          .then(reg => console.log("Service Worker registrado com sucesso:", reg.scope))
+          .catch(err => console.error("Erro ao registrar o Service Worker:", err));
+      }
+    </script>
+    
 
 
 </body>

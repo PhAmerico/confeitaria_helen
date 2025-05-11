@@ -161,5 +161,11 @@ def dashboard():
 
 
 
+@app.route('/service-worker.js')
+def sw():
+    return app.send_static_file('service-worker.js')
+
+
+
 if __name__ == '__main__':
     app.run(debug=True)
