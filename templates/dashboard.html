@@ -3,8 +3,11 @@
 
 {% block content %}
 
-
+    <div class="d-flex justify-content-between align-items-center mb-4">
     <h1 style="color: #8b4513;">Produtos Mais Vendidos</h1>
+    <a href="{{ url_for('admin_pedidos') }}" class="btn btn-outline-warning btn-sm">← Voltar</a>
+    </div>
+
     <canvas id="produtosChart"></canvas>
 
     <h1 style="color: #8b4513;">Vendas por Mês</h1>
@@ -30,22 +33,34 @@
 
 
         // Vendas por mês
-        const mesesLabels = {{ vendas|map(attribute=0)|list|tojson|safe }};
-        const vendasData = {{ vendas|map(attribute=1)|list|tojson|safe }};
+    const mesesLabels = {{ vendas|map(attribute=0)|list|tojson|safe }};
+    const vendasData = {{ vendas|map(attribute=1)|list|tojson|safe }};
 
-        new Chart(document.getElementById('vendasChart'), {
-            type: 'line',
-            data: {
-                labels: mesesLabels,
-                datasets: [{
-                    label: 'Pedidos',
-                    data: vendasData,
-                    backgroundColor: 'blue',
-                    borderColor: 'blue',
-                    fill: false
-                }]
+    new Chart(document.getElementById('vendasChart'), {
+        type: 'line',
+        data: {
+            labels: mesesLabels,
+            datasets: [{
+                label: 'Pedidos',
+                data: vendasData,
+                backgroundColor: 'rgba(30, 144, 255, 0.2)',
+                borderColor: 'rgba(30, 144, 255, 1)',
+                borderWidth: 2,
+                tension: 0.3,
+                fill: true,
+                pointBackgroundColor: 'white',
+                pointBorderColor: 'blue'
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
             }
-        });
+        }
+    });
     </script>
 
 

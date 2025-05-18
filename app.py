@@ -20,10 +20,32 @@ def carrinho():
 def contato():
     return render_template('contato.html')
 
+# Login
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        usuario = request.form['usuario']
+        senha = request.form['senha']
+
+        if usuario == 'admin' and senha == 'admin2025':
+            session['logado'] = True
+            return redirect(url_for('admin_pedidos'))
+        else:
+            return render_template('login.html', erro='Usuário ou senha incorretos')
+
+    return render_template('login.html')
+
 
 @app.route('/admin')
 def admin():
+    if not session.get('logado'):
+        return redirect(url_for('login'))
     return render_template('admin.html')
+
+@app.route('/logout')
+def logout():
+    session.pop('logado', None)  # Remove o login da sessão
+    return redirect(url_for('login'))  # Redireciona para a tela de login
 
 
 # Tela de Finalizar Pedido
@@ -83,6 +105,9 @@ def get_db_connection():
 
 @app.route('/admin/pedidos')
 def admin_pedidos():
+    if not session.get('logado'):
+        return redirect(url_for('login'))
+    
     filtro = request.args.get('filtro')  # Captura filtro da URL
 
     conn = get_db_connection()
